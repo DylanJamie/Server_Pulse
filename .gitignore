@@ -12,3 +12,5 @@ venv/
 *.db
 
 logs/
+
+roadmap.py

@@ -1,0 +1,141 @@
+Here's the order I'd build it in
+✅ Phase 1 — Get hardware data (Today)
+
+Start with app/services/monitor.py.
+
+Your goal:
+
+get_cpu_usage()
+get_ram_usage()
+get_disk_usage()
+get_uptime()
+get_hostname()
+get_temperature()
+
+Test it from the terminal.
+
+Don't even think about the website yet.
+
+If you can run:
+
+python test.py
+
+and it prints
+
+CPU: 17%
+
+RAM: 39%
+
+Disk: 28%
+
+Temp: 49°C
+
+you've already built the hardest part.
+
+✅ Phase 2 — Build the API
+
+Now create one endpoint.
+
+status.py
+
+GET /status
+
+simply returns
+
+{
+    "hostname":"raspberrypi",
+        "cpu":23,
+	    "ram":41,
+	        "disk":12,
+		    "temperature":47,
+		        "uptime":"3h 12m"
+			}
+
+Run
+
+localhost:8000/status
+
+Boom.
+
+You now have a backend.
+
+✅ Phase 3 — Homepage
+
+Now make
+
+index.html
+
+Don't make it pretty.
+
+Seriously.
+
+Literally this:
+
+Server Pulse
+
+CPU
+
+RAM
+
+Temperature
+
+Disk
+
+Hostname
+
+Five cards.
+
+No animations.
+
+No graphs.
+
+✅ Phase 4 — JavaScript
+
+Every second
+
+fetch("/status")
+
+Update the cards.
+
+Now you have a LIVE dashboard.
+
+✅ Phase 5 — CSS
+
+Now make it look nice.
+
+Dark mode
+
+Rounded cards
+
+Green accents
+
+Glow
+
+Responsive
+
+✅ Phase 6 — Docker
+
+Now containerize it.
+
+You already know it works.
+
+Docker becomes easy.
+
+✅ Phase 7 — Raspberry Pi
+
+Copy
+
+docker compose up
+
+Done.
+
+Here's how I'd structure my coding sessions.
+Session 1 (Tonight)
+
+Only one goal.
+
+monitor.py
+
+Nothing else.
+
+If by the end of tonight you can print CPU, RAM, Disk, Temp, Uptime and Hostname, that's a huge win.~
