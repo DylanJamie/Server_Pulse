@@ -19,3 +19,6 @@ Server Pulse is a lightweight server monitoring dashboard built with FastAPI, Do
 - Nginx
 - SQLite
 - Raspberry Pi 3B
+
+Docker will be used for this project but you can also download all the required packages with:
+pip install -r requirements.txt
