@@ -1,0 +1,50 @@
+/* style.css */
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #0d1117;
+    color: #c9d1d9;
+    margin: 0;
+    padding: 2rem;
+}
+
+.dashboard {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #58a6ff;
+}
+
+.hostname {
+    color: #8b949e;
+    margin-bottom: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 0.9rem;
+    color: #8b949e;
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+}
+
+.metric {
+    font-size: 2rem;
+    color: #58a6ff;
+    margin: 0;
+}
