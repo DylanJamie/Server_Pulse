@@ -5,7 +5,13 @@
 import psutil
 import socket
 import time
+import os
 from datetime import datetime
+
+# When running inside Docker, point psutil at the host's mounted /proc
+# so it reads real system stats instead of the container's own
+if os.path.exists("/host/proc"):
+    psutil.PROCFS_PATH = "/host/proc"
 
 # Get the host name of the server
 def get_hostname():
