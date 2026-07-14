@@ -36,17 +36,17 @@ def get_disk_usage():
     return disk_usage
     
 # Pull the Temperature
-# def get_temperature():
-#     temps = psutil.sensors_temperatures()
+def get_temperature():
+    temps = psutil.sensors_temperatures()
 
-#     if not temp:
-#         return None  # no sensors available (common on Raspberry Pi via psutil, macOS, some VMs)
+    if not temp:
+        return None  # no sensors available (common on Raspberry Pi via psutil, macOS, some VMs)
     
-#     # Grab the first available sensor reading
-#     for hardware_name, entries in temps.items():
-#         if entries:
-#             return entries[0].current  # returns a float, e.g. 45.0
-#     return None
+    # Grab the first available sensor reading
+    for hardware_name, entries in temps.items():
+        if entries:
+            return entries[0].current  # returns a float, e.g. 45.0
+    return None
 
 # Pull the Network Usage
 def get_network_usage():

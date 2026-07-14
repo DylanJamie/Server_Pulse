@@ -19,7 +19,7 @@ from app.services.monitor import (
     get_network_usage,
     get_uptime,
     get_ip_address,
-    # get_temperature,  # uncomment on the Pi
+    get_temperature,  # uncomment on the Pi
 )
 
 router = APIRouter()
@@ -38,7 +38,7 @@ def status():
             "bytes_recv_per_sec": recv
         },
         "uptime": get_uptime(),
-        # "temperature": get_temperature(),  # uncomment on the Pi
+        "temperature": get_temperature(),  # uncomment on the Pi
     }
 
 @router.get("/cpu")
@@ -55,9 +55,9 @@ def disk():
 
 @router.get("/temperature")
 def temperature():
-    # temp = get_temperature()
-    # return {"temperature_celsius": temp}
-    return {"error": "Temperature monitoring only available on Raspberry Pi"}
+    temp = get_temperature()
+    return {"temperature_celsius": temp}
+    # return {"error": "Temperature monitoring only available on Raspberry Pi"}
 
 @router.get("/uptime")
 def uptime():
