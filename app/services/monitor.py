@@ -39,7 +39,7 @@ def get_disk_usage():
 def get_temperature():
     temps = psutil.sensors_temperatures()
 
-    if not temp:
+    if not temps:
         return None  # no sensors available (common on Raspberry Pi via psutil, macOS, some VMs)
     
     # Grab the first available sensor reading
