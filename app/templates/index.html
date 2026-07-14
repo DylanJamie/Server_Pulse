@@ -2,40 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ServerPulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <div class="dashboard">
-        <h1>ServerPulse</h1>
-        <p class="hostname" id="hostname">Loading...</p>
+    <div class="scanlines"></div>
 
-        <div class="grid">
-            <div class="card">
-                <h2>CPU</h2>
-                <p class="metric" id="cpu">--%</p>
+    <div class="dashboard">
+
+        <header class="topbar">
+            <div class="wordmark">SERVER<span>PULSE</span></div>
+            <div class="statusline">
+                <span class="live-dot"></span>
+                <span id="hostname">connecting…</span>
             </div>
+        </header>
+
+        <section class="pulse-strip">
+            <canvas id="pulseCanvas"></canvas>
+            <div class="pulse-label">CPU PULSE</div>
+        </section>
+
+        <section class="grid">
             <div class="card">
-                <h2>RAM</h2>
-                <p class="metric" id="ram">--%</p>
+                <div class="card-head">
+                    <span>CPU</span>
+                    <span class="value" id="cpu">--%</span>
+                </div>
+                <canvas class="spark" id="cpuSpark"></canvas>
+                <div class="bar"><div class="bar-fill" id="cpuBar"></div></div>
             </div>
+
             <div class="card">
-                <h2>Disk</h2>
-                <p class="metric" id="disk">--%</p>
+                <div class="card-head">
+                    <span>RAM</span>
+                    <span class="value" id="ram">--%</span>
+                </div>
+                <canvas class="spark" id="ramSpark"></canvas>
+                <div class="bar"><div class="bar-fill" id="ramBar"></div></div>
             </div>
+
             <div class="card">
-                <h2>Temperature</h2>
-                <p class="metric" id="temperature">--°C</p>
+                <div class="card-head">
+                    <span>DISK</span>
+                    <span class="value" id="disk">--%</span>
+                </div>
+                <canvas class="spark" id="diskSpark"></canvas>
+                <div class="bar"><div class="bar-fill" id="diskBar"></div></div>
             </div>
+
             <div class="card">
-                <h2>Uptime</h2>
-                <p class="metric" id="uptime">--</p>
+                <div class="card-head">
+                    <span>TEMP</span>
+                    <span class="value" id="temperature">--°C</span>
+                </div>
+                <canvas class="spark" id="tempSpark"></canvas>
+                <div class="bar"><div class="bar-fill" id="tempBar"></div></div>
             </div>
-            <div class="card">
-                <h2>Network</h2>
-                <p class="metric" id="network">-- / --</p>
-            </div>
-        </div>
+        </section>
+
+        <footer class="statusbar">
+            <div class="stat"><span class="stat-label">UPTIME</span><span id="uptime">--</span></div>
+            <div class="stat"><span class="stat-label">NET</span><span id="network">-- / --</span></div>
+            <div class="stat"><span class="stat-label">IP</span><span id="ip">--</span></div>
+        </footer>
+
     </div>
 
     <script src="/static/js/dashboard.js"></script>
